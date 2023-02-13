@@ -96,7 +96,7 @@ class _NinjaCardState extends State<NinjaCard> {
                 ),
                 SizedBox(width: 10.0,),
                 Text(
-                  "Sun@hunter.com",
+                  "Sun@hunter.co.uk",
                   style:TextStyle(
                     color: Colors.grey[400],
                     fontSize: 18,
