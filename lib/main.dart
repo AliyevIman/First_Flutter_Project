@@ -6,18 +6,35 @@ void main() =>runApp(MaterialApp(
 ));
 
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({Key? key}) : super(key: key);
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+
+  int ninjaLevel=0;
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title:  Text('ninja selam alk'),
+        title:  Text('Hunter ID Card'),
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            ninjaLevel+=1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[850],
       ),
       body: Padding(
           padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
@@ -43,7 +60,7 @@ class NinjaCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0,),
             Text(
-              "Iman",
+              "Sung Jin Woo",
               style: TextStyle(
                   color: Colors.amberAccent,
                   fontSize: 28,
@@ -53,7 +70,7 @@ class NinjaCard extends StatelessWidget {
             ),
             SizedBox(height: 30.0,),
             const Text(
-              "Current Ninja level",
+              "Current Hunter level",
               style: TextStyle(
                   color: Colors.grey,
 
@@ -61,8 +78,8 @@ class NinjaCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.0,),
-            Text(
-              "8",
+             Text(
+              '$ninjaLevel',
               style: TextStyle(
                   color: Colors.amberAccent,
                   fontSize: 28,
@@ -79,7 +96,7 @@ class NinjaCard extends StatelessWidget {
                 ),
                 SizedBox(width: 10.0,),
                 Text(
-                  "aliyeff@gmail.com",
+                  "Sun@hunter.com",
                   style:TextStyle(
                     color: Colors.grey[400],
                     fontSize: 18,
